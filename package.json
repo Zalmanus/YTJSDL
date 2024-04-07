@@ -1,0 +1,19 @@
+{
+  "name": "ytjsdl",
+  "version": "1.0.0",
+  "description": "JavaScript YouTube audio downloader",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zalmanus/YTJSDL.git"
+  },
+  "author": "Zalmanus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zalmanus/YTJSDL/issues"
+  },
+  "homepage": "https://github.com/Zalmanus/YTJSDL#readme"
+}
