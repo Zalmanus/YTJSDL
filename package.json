@@ -4,7 +4,7 @@
   "description": "JavaScript YouTube audio downloader",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Zalmanus/YTJSDL/issues"
   },
-  "homepage": "https://github.com/Zalmanus/YTJSDL#readme"
+  "homepage": "https://github.com/Zalmanus/YTJSDL#readme",
+  "dependencies": {
+    "electron": "^29.2.0"
+  }
 }
