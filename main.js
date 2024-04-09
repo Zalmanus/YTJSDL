@@ -17,6 +17,10 @@ app.on('ready', function(){
         protocol:'file:',
         slashes: true
     }));
+    //Quit app when closed
+    mainWindow.on('closed', function(){
+        app.quit();
+    });
 
     //Build menu from template
     const mainMenu = Menu.buildFromTemplate(maninMenuTemplate);
@@ -38,6 +42,10 @@ function createAddWindow(){
             protocol:'file:',
             slashes: true
         }));
+        //Garbage collection handle
+        addWindow.on('close', function(){
+            addWindow = null;
+        });
 }
 
 //Create menu template
@@ -63,4 +71,29 @@ const maninMenuTemplate = [
             }
         ]
     }
-]
+];
+
+//If mac, add empty object to menu
+if(process.platform == 'darwin'){
+    maninMenuTemplate.unshift({});
+}
+
+// Add developer tools item if not in prod
+if(process.env.NODE_ENV !== 'production'){
+    maninMenuTemplate.push({
+        label: 'Developer Tools',
+        submenu:[
+            {
+        
+                label: 'Toggle DevTools',
+                accelerator: process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
+                click(item, focusedWindow){
+                    focusedWindow.toggleDevTools();
+                }
+            },
+            {
+                role: 'reload'
+            }
+        ]
+    });
+}
